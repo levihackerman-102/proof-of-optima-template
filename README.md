@@ -1,47 +1,31 @@
-# Hello World for the RISC Zero zkVM
+# Proof-of-Optima Template Repository
 
-Welcome!
+A template repository for contest organizers to create zero-knowledge proof-based optimization competitions where contestants can prove they've found optimal solutions without revealing their actual solutions or methods.
+Overview
 
-This `hello-world` example is a minimal application for the RISC Zero [zkVM],
-designed to help you get started building zkVM applications.
+This template enables contest organizers to quickly set up competitions where participants submit zero-knowledge proofs of optimization results rather than the solutions themselves. Contestants prove properties like "my solution achieves error ≤ X" or "my algorithm found a path with cost ≤ Y" while keeping their implementation and results private.
 
-For a step-by-step guide to building your first zkVM application, we recommend
-[this tutorial][tutorial].
+## Key Features
+
+    Privacy-preserving competitions: Contestants prove solution quality without revealing methods
+
+    Verifiable results: All submissions are cryptographically verifiable on-chain or off-chain
+
+    Flexible problem types: Supports various optimization problems (ML model training, pathfinding, scheduling, etc.)
+
+    RISC Zero zkVM integration: Built on proven zero-knowledge infrastructure
+
+    Automated verification: Contest organizers can verify all submissions programmatically
 
 ## Quick Start
 
-First, follow the [examples guide] to install dependencies and check out the correct version of the example.
-
-Then, run the example with:
+Run the example with:
 
 ```bash
 cargo run --release
 ```
 
-Congratulations! You just constructed a zero-knowledge proof that you know the
-factors of 391.
-
-## Use Cases
-
-Writing an application for the RISC Zero [zkVM] is the easiest way for software
-developers to produce zero-knowledge proofs. Whether you're building for
-blockchains or not, RISC Zero offers the most flexible and mature
-ecosystem for developing applications that involve ZKPs.
-
-You can run the zkVM locally and your secrets will never leave your own machine,
-or you can upload your program & inputs to [Bonsai] for remote proving.
-
-## Project Organization
-
-zkVM applications are organized into a [host program] and a [guest program]. The
-host program can be found in [`src/main.rs`] and the guest program can be found
-in [`methods/guest/src/main.rs`].
-
-The [host] first [executes] the guest program and then [proves the
-execution][prove] to construct a [receipt]. The receipt can be passed to a third
-party, who can examine the [journal] to check the program's outputs and can
-[verify] the [receipt] to ensure the integrity of the [guest program]'s
-execution.
+Congratulations! You just constructed a zero-knowledge proof that you know an optimal path for a given TSP problem.
 
 ### What gets proven?
 
@@ -49,28 +33,4 @@ The [receipt] proves that the [guest program] was executed correctly, and that
 the contents of `receipt.journal` match what was written by `env::commit()`
 during the execution of the guest program.
 
-By running the demo, Alice demonstrates that she knows two integers that
-multiply to give the number written in `receipt.journal`. Thus, Alice proves
-that the number written in `receipt.journal` is composite — and that she knows
-the factors — without revealing any further information.
-
-## Tutorial: Building your first zkVM Application
-
-For a step-by-step guide to building your first zkVM application, we recommend [this
-tutorial][tutorial]. For more materials, check out the [developer docs].
-
-[`methods/guest/src/main.rs`]: ./methods/guest/src/main.rs
-[`src/main.rs`]: ./src/main.rs
-[Bonsai]: https://dev.bonsai.xyz
-[developer docs]: https://dev.risczero.com/zkvm
-[examples guide]: https://dev.risczero.com/api/zkvm/examples/#running-the-examples
-[executes]: https://dev.risczero.com/terminology#execute
-[guest program]: https://dev.risczero.com/terminology#guest-program
-[host]: https://dev.risczero.com/terminology#host
-[host program]: https://dev.risczero.com/terminology#host-program
-[journal]: https://dev.risczero.com/terminology#journal
-[prove]: https://dev.risczero.com/terminology#prove
-[receipt]: https://dev.risczero.com/terminology#receipt
-[tutorial]: https://dev.risczero.com/api/zkvm/tutorials/hello-world
-[verify]: https://dev.risczero.com/terminology#verify
-[zkVM]: https://dev.risczero.com/zkvm
+By running the demo, Alice demonstrates that she knows an optimal path to take for the TSP according to the graph given in `receipt.journal`. Thus, Alice proves that she knows a path of her claimed length written in `receipt.journal` without revealing any further information.
