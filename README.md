@@ -1,23 +1,24 @@
 # Proof-of-Optima Template Repository
 
 A template repository for contest organizers to create zero-knowledge proof-based optimization competitions where contestants can prove they've found optimal solutions without revealing their actual solutions or methods.
-Overview
+
+## Overview
 
 This template enables contest organizers to quickly set up competitions where participants submit zero-knowledge proofs of optimization results rather than the solutions themselves. Contestants prove properties like "my solution achieves error ≤ X" or "my algorithm found a path with cost ≤ Y" while keeping their implementation and results private.
 
 ## Key Features
 
-    Privacy-preserving competitions: Contestants prove solution quality without revealing methods
+- Privacy-preserving competitions: Contestants prove solution quality without revealing methods
 
-    Verifiable results: All submissions are cryptographically verifiable on-chain or off-chain
+- Verifiable results: All submissions are cryptographically verifiable on-chain or off-chain
 
-    Flexible problem types: Supports various optimization problems (ML model training, pathfinding, scheduling, etc.)
+- Flexible problem types: Supports various optimization problems (ML model training, pathfinding, scheduling, etc.)
 
-    RISC Zero zkVM integration: Built on proven zero-knowledge infrastructure
+- RISC Zero zkVM integration: Built on proven zero-knowledge infrastructure
 
-    Automated verification: Contest organizers can verify all submissions programmatically
+- Automated verification: Contest organizers can verify all submissions programmatically
 
-## Quick Start
+## Proof generation
 
 Run the example with:
 
