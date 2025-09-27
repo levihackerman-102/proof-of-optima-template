@@ -1,0 +1,15 @@
+[package]
+name = "tsp"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tsp-methods = { path = "methods" }
+risc0-zkvm = "3.0.3"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+hex = "0.4.3"
+
+[features]
+cuda = ["risc0-zkvm/cuda"]
+default = []
+prove = ["risc0-zkvm/prove"]
